@@ -1,0 +1,80 @@
+div {
+    background-color: #73191f;
+    font-family: 'sen', sans-serif;
+}
+
+
+.avi {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 90%;
+    border: solid 5px;
+    border-radius: 200px;
+  }
+
+.marq{
+    margin-top: 20px;
+    text-align: center; 
+    border: solid white 5px;
+    background-color: #e82313;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+a{
+    font-family: 'Press Start 2P', cursive;
+    border: solid white 5px;
+    border-radius: 5px;
+    background: #e82313;
+    margin-right: auto;
+    width: 100%;
+}
+
+.jumbotron {
+    margin-top: 10px;
+}
+
+.col-8{
+    background-color: #33274b;
+    color: white;
+}
+
+.brick{
+    border: solid white; 
+    background-color: #e82313;
+    font-size: x-large;
+}
+
+.display-4{
+    font-family: 'IBM Plex Serif', serif;
+}
+
+.col-8{
+    background-color: #33274b;
+    background: linear-gradient(to bottom right,#33274b, #8d150b);
+}
+
+.col-4{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.lead {
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    border: solid white;
+    background-color: #f48c84;
+    border-radius: 5px;
+    color: black;
+}
