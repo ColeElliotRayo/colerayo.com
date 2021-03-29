@@ -8,6 +8,6 @@ indexFull = top + index + bottom
 testimonialsFull = top + testimonials + bottom
 contactFull = top + contact + bottom
 
-open("docs/indexFull.html", "w+").write(indexFull)
-open("docs/testimonialsFull.html","w+").write(testimonialsFull)
-open("docs/contactFull.html", "w+").write(contactFull)
+open("docs/index.html", "w+").write(indexFull)
+open("docs/testimonials.html","w+").write(testimonialsFull)
+open("docs/contact.html", "w+").write(contactFull)
