@@ -13,35 +13,44 @@ def main():
         {
             "filename": "content/contact.html",
             "output": "docs/contact.html",
-            "title": "Index",
+            "title": "Contact",
         } ,
     ]
+
+    def read_in():
+        base = open("templates/base.html").read()
+        content = open(page["filename"]).read()
+        updated_page = base.replace("{{title}}", page["title"])
+        updated_page = updated_page.replace("{{content}}", content)
+        return updated_page
+
+    def export_update():
+        open(page["output"], "w+").write(read_in())
+
     for page in pages:
-        print(page)
+        export_update()
 
-    page_title = page["title"]
-    print (page_title)
+main()
 
-    template = open("templates/base.html").read()
+
     # index generation
-    index_content = open("content/index.html").read()
-    finished_index_page = template.replace("{{content}}", index_content)
-    open("docs/index.html", "w+").write(finished_index_page)
+    # index_content = open("content/index.html").read()
+    # finished_index_page = template.replace("{{title}}", page_title)
+    # finished_index_page = finished_index_page.replace("{{content}}", index_content)
+    # open("docs/index.html", "w+").write(finished_index_page)
+    
+
     # testimonials generation
-    testimonials_content = open("content/testimonials.html").read()
-    finished_testimonials_page = template.replace("{{content}}", testimonials_content)
-    open("docs/testimonials.html", "w+").write(finished_testimonials_page)
+    # testimonials_content = open("content/testimonials.html").read()
+    # finished_testimonials_page = template.replace("{{content}}", testimonials_content)
+    # open("docs/testimonials.html", "w+").write(finished_testimonials_page)
+
     # contact generation
-    contact_content = open("content/contact.html").read()
-    finished_contact_page = template.replace("{{content}}", contact_content)
-    open("docs/contact.html", "w+").write(finished_contact_page)
+    # contact_content = open("content/contact.html").read()
+    # finished_contact_page = template.replace("{{content}}", contact_content)
+    # open("docs/contact.html", "w+").write(finished_contact_page)
 
-
-#    indexFull = top + index + bottom
-#    testimonialsFull = top + testimonials + bottom
-#    contactFull = top + contact + bottom
 #    open("docs/index.html", "w+").write(indexFull)
 #    open("docs/testimonials.html","w+").write(testimonialsFull)
 #    open("docs/contact.html", "w+").write(contactFull)
 
-main() 
