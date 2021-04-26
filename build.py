@@ -1,25 +1,37 @@
 import glob
 import os
-pages = []
-
 from pprint import pprint
+from jinja2 import Template
+pages = []
 
 all_html_files = glob.glob("content/*.html")
 
 for file_path in all_html_files:
     file_name = os.path.basename(file_path)
-    # print("file_name:", file_name)
     name_only, extension = os.path.splitext(file_name)
-    # print(name_only)
-    output = "docs/" + (file_name)
-    # print(output)
+    output_path = "docs/" + (file_name)
     pages.append({
     "filename": file_path,
-    "title": file_path,
-    "output": output,
+    "title": name_only,
+    "output": output_path,
     })
 
 pprint(pages)
+
+for page in pages:
+    page_html = open(page['filename']).read()
+    template_html = open("templates/base.html").read()
+    title = page['title']
+    template = Template(template_html)
+    output = template.render(
+        title=title,
+        content=page_html
+    )
+    open(page['output'], "w+").write(output)
+
+
+
+
 
 def main():
     
@@ -36,4 +48,4 @@ def main():
     for page in pages:
         export_update()
 
-main()
+# main()
