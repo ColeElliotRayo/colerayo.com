@@ -23,9 +23,11 @@ for page in pages:
     template_html = open("templates/base.html").read()
     title = page['title']
     template = Template(template_html)
+
     output = template.render(
         title=title,
-        content=page_html
+        content=page_html,
+        pages=pages
     )
     open(page['output'], "w+").write(output)
 
