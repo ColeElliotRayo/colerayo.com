@@ -30,3 +30,6 @@ def update_pages():
             pages=pages
         )
         open(page['output'], "w+").write(output)
+
+def new_page():
+    open('content/new content page.html', "w+").write('<h1>New Content</h1><p>New Content</p>')
